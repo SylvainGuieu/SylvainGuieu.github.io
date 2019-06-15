@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title> {% if page.title %} {{ page.title }} | {% endif %} CV</title>
+  <link href="media/{{ site.style }}-screen.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="media/{{ site.style }}-print.css" type="text/css" rel="stylesheet" media="print">
+</head>
+<body>
+  <div id="main">
+    
+    
+    <div id="content">
+        <h1 class="doctype">{{ page.doctype }}</h1>  
+        <h1 class="cvname">{{ page.cvname }}</h1>        
+        
+        <div id="coordinates">
+            {% if page.tel %}  {{ page.tel }} | {% endif %}
+            {% if page.email %} <a href="mailto://{{ page.email }}">{{ page.email }}</a> | {% endif %}
+            {% if page.address %} {{ page.address }}{% endif %}    
+        </div>
+        <!--
+        
+        <table id="coordinates"><tr>
+            {% if page.tel %} <td> {{ page.tel }} </td> {% endif %}
+            {% if page.email %}<td> <a href="mailto://{{ page.email }}">{{ page.email }}</a> </td> {% endif %}
+            {% if page.address %} <td>{{ page.address }}</td>{% endif %}         
+        </tr></table>
+        -->
+    <hr>
+    {{ content }}
+    </div>
+  </div>
+</body>
+</html>
